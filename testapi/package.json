@@ -1,6 +1,6 @@
 {
   "name": "graphql-apitest-react",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "This package is for testing whether a graph ql api can be masked through using external sdk ",
   "main": "index.js",
   "scripts": {
