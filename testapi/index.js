@@ -1,10 +1,11 @@
 // const { request, gql } = require('graphql-request') ; 
 const axios = require('axios').default;
-
+const IP = '172.17.0.4'
+const Port = '5000'
 const getProductCards = async () => {
     // console.log("graph ql api test") ;
     let Data = {};
-    await axios.get('http://localhost:5000/productCard').then(
+    await axios.get(`http://${IP}:${Port}/productCard`).then(
         res => {
             Data = res.data
         }
@@ -14,7 +15,7 @@ const getProductCards = async () => {
 const getMenuCategories = async () => {
     // console.log("graph ql api test") ;
     let Data = {};
-    await axios.get('http://localhost:5000/menuCategories').then(
+    await axios.get(`http://${IP}:${Port}/menuCategories`).then(
         res => {
             Data = res.data
         }
