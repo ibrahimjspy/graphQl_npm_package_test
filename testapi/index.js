@@ -5,17 +5,20 @@ const Port = '5000'
 const getProductCards = async () => {
     // console.log("graph ql api test") ;
     let Data = {};
-    await axios.get(`http://${IP}:${Port}/productCard`).then(
+    await axios.get(`http://host.docker.internal:4001/productCard`).then(
         res => {
             Data = res.data
+            console.log(res)
         }
+    ).catch(
+        err => console.log(err)
     )
     return Data ;
 }
 const getMenuCategories = async () => {
     // console.log("graph ql api test") ;
     let Data = {};
-    await axios.get(`http://${IP}:${Port}/menuCategories`).then(
+    await axios.get(`http://host.docker.internal:4001/menuCategories`).then(
         res => {
             Data = res.data
         }
