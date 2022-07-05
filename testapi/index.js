@@ -1,11 +1,12 @@
 // const { request, gql } = require('graphql-request') ; 
 const axios = require('axios').default;
-const IP = '172.17.0.4'
-const Port = '5000'
+// const IP = '172.17.0.4'
+const IP_LINK ='http://localhost:4001'
+// const Port = '5000'
 const getProductCards = async () => {
     // console.log("graph ql api test") ;
     let Data = {};
-    await axios.get(`http://host.docker.internal:4001/productCard`).then(
+    await axios.get(`${IP_LINK}/productCard`).then(
         res => {
             Data = res.data
             console.log(res)
@@ -18,7 +19,27 @@ const getProductCards = async () => {
 const getMenuCategories = async () => {
     // console.log("graph ql api test") ;
     let Data = {};
-    await axios.get(`http://host.docker.internal:4001/menuCategories`).then(
+    await axios.get(`${IP_LINK}/menuCategories`).then(
+        res => {
+            Data = res.data
+        }
+    )
+    return Data ;
+}
+const getProductCategories = async () => {
+    // console.log("graph ql api test") ;
+    let Data = {};
+    await axios.get(`${IP_LINK}/menuCategories/productCollections`).then(
+        res => {
+            Data = res.data
+        }
+    )
+    return Data ;
+}
+const getProductCardByCollection = async (id) => {
+    // console.log("graph ql api test") ;
+    let Data = {};
+    await axios.get(`${IP_LINK}/productCard/byCollectionId/${id}`).then(
         res => {
             Data = res.data
         }
@@ -31,5 +52,7 @@ const funcTest = () => {
 module.exports = {
     getProductCards ,
     getMenuCategories,
-    funcTest
+    funcTest,
+    getProductCategories,
+    getProductCardByCollection
 };
