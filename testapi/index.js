@@ -1,9 +1,9 @@
 // const { request, gql } = require('graphql-request') ; 
 const axios = require('axios').default;
+// WARN this npm package is for testing and dev purposes ,
 // const IP = '172.17.0.4'
 // const IP_LINK ='http://host.docker.internal:4001'
 const IP_LINK = process.env.NEXT_PUBLIC_IP_LINK
-
 // const Port = '5000'
 const getProductCards = async () => {
     // console.log("graph ql api test") ;
