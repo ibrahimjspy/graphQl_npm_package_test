@@ -1,14 +1,10 @@
-// const { request, gql } = require('graphql-request') ; 
 const axios = require('axios').default;
-// WARN this npm package is for testing and dev purposes ,
-// const IP = '172.17.0.4'
-// const IP_LINK ='http://host.docker.internal:4001'
 const IP_LINK = process.env.NEXT_PUBLIC_IP_LINK
-// const Port = '5000'
-const getProductCards = async () => {
-    // console.log("graph ql api test") ;
+// WARN this npm package is for testing and dev purposes ,
+// const IP = '172.17.0.4';
+const axiosCall = async (call) => {
     let Data = {};
-    await axios.get(`${IP_LINK}/productCard`).then(
+    await axios.get(`${IP_LINK}/${call}`).then(
         res => {
             Data = res.data
             console.log(res)
@@ -16,52 +12,26 @@ const getProductCards = async () => {
     ).catch(
         err => console.log(err)
     )
-    return Data ;
-}
+    return Data;
+};
+const getProductCards = async () => {
+    return axiosCall('productCard');
+};
 const getMenuCategories = async () => {
-    // console.log("graph ql api test") ;
-    let Data = {};
-    await axios.get(`${IP_LINK}/menuCategories`).then(
-        res => {
-            Data = res.data
-        }
-    )
-    return Data ;
-}
+    return axiosCall('categories/menu');
+};
 const getProductCategories = async () => {
-    // console.log("graph ql api test") ;
-    let Data = {};
-    await axios.get(`${IP_LINK}/menuCategories/productCollections`).then(
-        res => {
-            Data = res.data
-        }
-    )
-    return Data ;
-}
+    return axiosCall('categories/productCollections');
+};
 const getProductCardByCollection = async (id) => {
-    // console.log("graph ql api test") ;
-    let Data = {};
-    await axios.get(`${IP_LINK}/productCard/byCollectionId/${id}`).then(
-        res => {
-            Data = res.data
-        }
-    )
-    return Data ;
-}
+    return axiosCall(`productCard/byCollectionId/${id}`);
+};
 const getProductDetailsBySlug = async (slug) => {
-    // console.log("graph ql api test") ;
-    let Data = {};
-    await axios.get(`${IP_LINK}/productCard/details/${slug}`).then(
-        res => {
-            Data = res.data
-        }
-    )
-    return Data ;
-}
-
+    return axiosCall(`productCard/details/${slug}`)
+};
 const funcTest = () => {
-    console.log("I am test function from node server  ");
-}
+    console.log("I am test function from node server ");
+};
 module.exports = {
     getProductCards ,
     getMenuCategories,
