@@ -1,7 +1,6 @@
 const axios = require('axios').default;
 const IP_LINK = process.env.NEXT_PUBLIC_IP_LINK
 // WARN this npm package is for testing and dev purposes ,
-// const IP = '172.17.0.4';
 const axiosCall = async (call) => {
     let Data = {};
     await axios.get(`${IP_LINK}/${call}`).then(
