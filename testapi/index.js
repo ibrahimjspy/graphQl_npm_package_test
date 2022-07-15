@@ -1,6 +1,5 @@
 const axiosCall = require('./fetch')
-// WARN this npm package is for testing and dev purposes ,
-// You must provide an IP link in your .env file 
+
 const getProductCards = async () => {
     return axiosCall('productCard');
 };
@@ -19,7 +18,6 @@ const getProductDetailsBySlug = async (slug) => {
 const funcTest = () => {
     console.log("I am test function from node server ");
 };
-getMenuCategories();
 module.exports = {
     getProductCards ,
     getMenuCategories,
