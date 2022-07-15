@@ -1,18 +1,6 @@
-const axios = require('axios').default;
-const IP_LINK = process.env.NEXT_PUBLIC_IP_LINK
+const axiosCall = require('./fetch')
 // WARN this npm package is for testing and dev purposes ,
-const axiosCall = async (call) => {
-    let Data = {};
-    await axios.get(`${IP_LINK}/${call}`).then(
-        res => {
-            Data = res.data
-            console.log(res)
-        }
-    ).catch(
-        err => console.log(err)
-    )
-    return Data;
-};
+// You must provide an IP link in your .env file 
 const getProductCards = async () => {
     return axiosCall('productCard');
 };
@@ -31,6 +19,7 @@ const getProductDetailsBySlug = async (slug) => {
 const funcTest = () => {
     console.log("I am test function from node server ");
 };
+getMenuCategories();
 module.exports = {
     getProductCards ,
     getMenuCategories,
