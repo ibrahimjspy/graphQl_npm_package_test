@@ -15,6 +15,9 @@ const getProductCategories = async () => {
 const getMenuCategories = async () => {
     return axiosCall('categories/menu');
 };
+const getUserDashboardById = async (id) => {
+    return axiosCall(`http://localhost:5000/orders/dashboardById/${id}`);
+};
 const funcTest = () => {
     console.log("I am test function from node server ");
 };
@@ -24,5 +27,6 @@ module.exports = {
     funcTest,
     getProductCategories,
     getProductCardByCollection,
-    getProductDetailsBySlug
+    getProductDetailsBySlug,
+    getUserDashboardById
 };
