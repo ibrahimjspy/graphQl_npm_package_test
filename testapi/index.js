@@ -25,7 +25,7 @@ const getUserDashboardById = async (id) => {
 };
 // mapped against menu categories 
 const getProductListPageBySlug = async (slug) => {
-    return axiosCall(`/product/list/${slug}`);
+    return axiosCall(`product/list/${slug}`);
 };
 
 const funcTest = () => {

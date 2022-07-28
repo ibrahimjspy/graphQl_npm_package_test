@@ -1,6 +1,6 @@
 {
   "name": "graphql-apitest-react",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "graphql middleware sdk for REST calls ",
   "main": "index.js",
   "scripts": {
