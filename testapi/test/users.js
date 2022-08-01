@@ -7,12 +7,19 @@ let Users = class {
     constructor() {
     }
     /**
-     * returns add to cart data based on id
+     * returns shoppingCart data based on id
      * @params user id 
      */
-    getAddToCartById() {
-        return axiosCall('product/cards');
+    getShoppingCartById(id) {
+        return axiosCall(`user/shoppingCart/${id}`);
+    }
+    /**
+     * returns checkout data based on id
+     * @params user id 
+     */
+     getCheckoutById(id) {
+        return axiosCall(`user/checkout/${id}`);
     }
 }
- 
+
 module.exports = Users;

@@ -1,4 +1,6 @@
-const axiosCall = require('./fetch')
+const axiosCall = require('./fetch');
+let UserClass = require('./test/users');
+let User = new UserClass("Leo", 21);
 /**
  * returns default product cards for landing page 
  */
@@ -61,5 +63,6 @@ module.exports = {
     getProductDetailsBySlug,
     getUserDashboardById,
     getProductDetailsBySlug,
-    getProductListPageBySlug
+    getProductListPageBySlug,
+    User
 };
