@@ -26,7 +26,7 @@ const Products = class {
     return axiosCall(`product/cardsByCategoryId/${id}`);
   };
   /**
-   * returns product details page data using slug
+   * @returns product details page data using slug
    * @params slug should be of single product
    */
   getProductDetailsBySlug = async (slug) => {
@@ -40,6 +40,13 @@ const Products = class {
   getProductListPageBySlug = async (slug) => {
     return axiosCall(`product/list/${slug}`);
   };
+    /**
+   * returns product details page data using slug
+   * @params slug should be of single product
+   */
+     getProductCount = async (id) => {
+      return axiosCall(`product/details/${slug}`); // product Slug
+    };
 };
 
 module.exports = Products;

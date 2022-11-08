@@ -11,7 +11,24 @@ const axiosCall = async (call) => {
   await axios.get(`${IP_LINK}/${call}`).then(
       (res) => {
         Data = res.data;
-        console.log(res.data);
+        // console.log(res.data);
+      },
+  )
+  return Data;
+};
+module.exports = axiosCall;
+
+/**
+ * This is axios boilerplate used for REST call
+ * @params route where call is transmitted
+ * @example /product/list/bottoms
+ */
+ const axiosPostCall = async (call) => {
+  let Data = {};
+  await axios.post(`${IP_LINK}/${call}`).then(
+      (res) => {
+        Data = res.data;
+        // console.log(res.data);
       },
   ).catch(
       (err) => console.log(err),
