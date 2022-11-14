@@ -5,7 +5,7 @@ let axiosCall = require("../fetch");
  * Class linking cart bundles module in middleware
  * @methods getCartCheckoutBundlesByUserId(),  returns product bundles
  */
-const Cart = class {
+const Checkout = class {
   constructor() {}
   /**
    * returns bundles of the product in cart page
@@ -15,4 +15,4 @@ const Cart = class {
   };
 };
 
-module.exports = Cart;
+module.exports = Checkout;

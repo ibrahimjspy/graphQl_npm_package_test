@@ -12,8 +12,8 @@ const Categories = new CategoriesClass("Leo", 10);
 const OrdersClass = require("./module/orders");
 const Orders = new OrdersClass("Leo", 10);
 
-const CartClass = require("./module/cart");
-const Cart = new CartClass();
+const CheckoutClass = require("./module/checkout");
+const Checkout = new CheckoutClass();
 /**
  * function for testing
  */
@@ -27,5 +27,5 @@ module.exports = {
   Categories,
   Orders,
   funcTest,
-  Cart,
+  Checkout,
 };
