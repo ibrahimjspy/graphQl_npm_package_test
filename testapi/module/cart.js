@@ -1,10 +1,11 @@
 /* eslint-disable require-jsdoc */
-const axiosCall = require("../fetch");
+/* eslint-disable valid-jsdoc */
+let axiosCall = require("../fetch");
 /**
- * Class linking categories module in middleware
+ * Class linking cart bundles module in middleware
  * @methods getCartCheckoutBundlesByUserId(),  returns product bundles
  */
-const Categories = class {
+const Cart = class {
   constructor() {}
   /**
    * returns bundles of the product in cart page
@@ -14,4 +15,4 @@ const Categories = class {
   };
 };
 
-module.exports = Categories;
+module.exports = Cart;
